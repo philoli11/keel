@@ -42,6 +42,7 @@ public class ExtensionExecutor extends AbstractComponentExecutor {
         Ext extension;
         LOGGER.debug("context in locateExtension is : " + context);
 
+        @SuppressWarnings("unchecked")
         List<Ext> extensionPointList = (List<Ext>) extensionRepository.getExtensionRepo().get(targetClz);
 
         List<Ext> locateExtensions = new ArrayList<>();
