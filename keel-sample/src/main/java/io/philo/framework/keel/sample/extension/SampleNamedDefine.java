@@ -1,4 +1,4 @@
-package io.philo.framework.keel.sample;
+package io.philo.framework.keel.sample.extension;
 
 public class SampleNamedDefine {
 

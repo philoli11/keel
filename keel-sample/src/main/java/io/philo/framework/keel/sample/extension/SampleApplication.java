@@ -1,4 +1,4 @@
-package io.philo.framework.keel.sample;
+package io.philo.framework.keel.sample.extension;
 
 import io.philo.framework.keel.context.KeelContext;
 import io.philo.framework.keel.extension.ExtensionExecutor;
