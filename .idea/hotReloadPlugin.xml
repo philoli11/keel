@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="HotReloadPluginConfiguration">
+    <option name="hostNameKeyword" value="lizhe" />
+    <option name="keywords">
+      <list>
+        <option value="" />
+      </list>
+    </option>
+    <option name="selectedHostName" value="newton-gateway-default-lizhe3-lptj5:18806" />
+    <option name="selectedProcess">
+      <JvmProcess>
+        <option name="detailVmArgs" value="-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005 -Xss512k -Dsun.net.inetaddr.ttl=30 -Dapp.name=newton -Xmx1g -Xms1g -XX:+UseG1GC -XX:ParallelGCThreads=4 -XX:ConcGCThreads=1 -XX:MaxGCPauseMillis=100 -XX:+UnlockExperimentalVMOptions -Denv=sit" />
+        <option name="displayName" value="newton.jar --spring.profiles.active=sit" />
+        <option name="pid" value="69" />
+      </JvmProcess>
+    </option>
+    <option name="server" value="crm-diamond-hotfix.int.sit.xiaohongshu.com" />
+  </component>
+</project>
