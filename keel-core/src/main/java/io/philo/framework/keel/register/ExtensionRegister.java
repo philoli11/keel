@@ -1,4 +1,4 @@
-package io.philo.framework.keel.extension.register;
+package io.philo.framework.keel.register;
 
 
 import io.philo.framework.keel.extension.Extension;

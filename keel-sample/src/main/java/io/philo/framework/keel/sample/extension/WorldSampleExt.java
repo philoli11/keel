@@ -3,13 +3,18 @@ package io.philo.framework.keel.sample.extension;
 
 import io.philo.framework.keel.extension.Extension;
 import io.philo.framework.keel.extension.ExtensionType;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
 @Component
 @Extension(cond = "#name == 'abc'", type = ExtensionType.SHARDED, order = 2)
 public class WorldSampleExt implements SampleExtensionPoint {
+
+    private static final Logger logger = LoggerFactory.getLogger(WorldSampleExt.class);
+
     @Override
     public void echo() {
-        System.out.println("World");
+        logger.info("World");
     }
 }

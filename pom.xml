@@ -10,8 +10,9 @@
     <packaging>pom</packaging>
     <modules>
         <module>keel-core</module>
-        <module>keel-sample</module>
+        <module>keel-common</module>
         <module>keel-spring-boot-starter</module>
+        <module>keel-sample</module>
     </modules>
 
     <properties>
@@ -53,6 +54,21 @@
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-context</artifactId>
                 <version>${spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.philo.framework</groupId>
+                <artifactId>keel-common</artifactId>
+                <version>${revision}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.philo.framework</groupId>
+                <artifactId>keel-core</artifactId>
+                <version>${revision}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.philo.framework</groupId>
+                <artifactId>keel-spring-boot-starter</artifactId>
+                <version>${revision}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
