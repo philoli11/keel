@@ -13,6 +13,6 @@ import java.lang.annotation.Target;
 @Target({ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)
 public @interface PostInterceptor {
-    int order() default Integer.MIN_VALUE;
+    int order() default Integer.MAX_VALUE;
 
 }

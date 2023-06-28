@@ -27,5 +27,5 @@ public @interface Extension {
      *
      * @return 扩展点顺序
      */
-    int order() default Integer.MIN_VALUE;
+    int order() default Integer.MAX_VALUE;
 }
