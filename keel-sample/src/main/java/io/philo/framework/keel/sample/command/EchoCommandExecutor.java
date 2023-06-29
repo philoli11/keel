@@ -25,10 +25,8 @@ public class EchoCommandExecutor implements CommandExecutor<Response, EchoComman
 
     @Override
     public Response execute(EchoCommand cmd) {
-        KeelContext keelContext = KeelContext.create();
-        keelContext.with(SampleNamedDefine::getId).set(2L);
-        keelContext.with(SampleNamedDefine::getName).set("abc");
-        extensionExecutor.executeVoid(SampleExtensionPoint.class, keelContext, SampleExtensionPoint::echo);
+        KeelContext context = cmd.getContext();
+        extensionExecutor.executeVoid(SampleExtensionPoint.class, context, SampleExtensionPoint::echo);
         return Response.buildSuccess();
     }
 }
