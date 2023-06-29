@@ -10,7 +10,7 @@ package io.philo.framework.keel.register;
 import io.philo.framework.keel.command.CommandExecutor;
 import io.philo.framework.keel.command.CommandHub;
 import io.philo.framework.keel.command.CommandInvocation;
-import io.philo.framework.keel.common.Command;
+import io.philo.framework.keel.command.Command;
 import io.philo.framework.keel.constant.KeelConstant;
 import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Component;

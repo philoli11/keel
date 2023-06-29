@@ -1,7 +1,6 @@
 package io.philo.framework.keel.command;
 
 
-import io.philo.framework.keel.common.Command;
 import io.philo.framework.keel.common.Response;
 
 /**

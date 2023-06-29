@@ -1,6 +1,6 @@
 package io.philo.framework.keel.exception;
 
-import io.philo.framework.keel.common.Command;
+import io.philo.framework.keel.command.Command;
 import io.philo.framework.keel.common.Response;
 
 /**
