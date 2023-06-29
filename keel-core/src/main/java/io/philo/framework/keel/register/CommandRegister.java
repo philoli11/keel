@@ -7,6 +7,7 @@
  */
 package io.philo.framework.keel.register;
 
+import io.philo.framework.keel.command.CommandExe;
 import io.philo.framework.keel.command.CommandExecutor;
 import io.philo.framework.keel.command.CommandHub;
 import io.philo.framework.keel.command.CommandInvocation;
@@ -17,6 +18,7 @@ import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
 import java.lang.reflect.Method;
+import java.util.List;
 
 
 /**
@@ -26,18 +28,21 @@ import java.lang.reflect.Method;
  */
 
 @Component
-public class CommandRegister {
+public class CommandRegister implements Register<CommandExecutor<?, ?>> {
 
     @Resource
     private CommandHub commandHub;
 
-    public void doRegistration(CommandExecutor<?, ?> commandExecutor, ApplicationContext applicationContext) {
-        Class<? extends Command> commandClz = getCommandFromExecutor(commandExecutor);
-        CommandInvocation commandInvocation = applicationContext.getAutowireCapableBeanFactory().createBean(CommandInvocation.class);
-        commandInvocation.setCommandExecutor(commandExecutor);
-        commandInvocation.setPreInterceptors(commandHub.getGlobalPreInterceptors());
-        commandInvocation.setPostInterceptors(commandHub.getGlobalPostInterceptors());
-        commandHub.getCommandRepository().put(commandClz, commandInvocation);
+    public void doRegistration(ApplicationContext applicationContext) {
+        List<CommandExecutor<?, ?>> scanBeans = scan(applicationContext, CommandExe.class);
+        for (CommandExecutor<?, ?> commandExecutor : scanBeans) {
+            Class<? extends Command> commandClz = getCommandFromExecutor(commandExecutor);
+            CommandInvocation commandInvocation = applicationContext.getAutowireCapableBeanFactory().createBean(CommandInvocation.class);
+            commandInvocation.setCommandExecutor(commandExecutor);
+            commandInvocation.setPreInterceptors(commandHub.getGlobalPreInterceptors());
+            commandInvocation.setPostInterceptors(commandHub.getGlobalPostInterceptors());
+            commandHub.getCommandRepository().put(commandClz, commandInvocation);
+        }
     }
 
     private Class<? extends Command> getCommandFromExecutor(CommandExecutor<?, ?> commandExecutor) {

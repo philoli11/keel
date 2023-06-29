@@ -10,6 +10,7 @@ package io.philo.framework.keel.register;
 import io.philo.framework.keel.command.CommandHub;
 import io.philo.framework.keel.command.CommandInterceptor;
 import io.philo.framework.keel.command.PreInterceptor;
+import org.springframework.context.ApplicationContext;
 import org.springframework.core.annotation.AnnotationUtils;
 import org.springframework.stereotype.Component;
 
@@ -23,13 +24,16 @@ import java.util.List;
  * @author fulan.zjf 2017-11-04
  */
 @Component
-public class PreInterceptorRegister {
+public class PreInterceptorRegister implements Register<CommandInterceptor> {
 
     @Resource
     private CommandHub commandHub;
 
-    public void doRegistration(CommandInterceptor commandInterceptor) {
-        registerInterceptor(commandInterceptor);
+    public void doRegistration(ApplicationContext applicationContext) {
+        List<CommandInterceptor> commandInterceptors = scan(applicationContext, PreInterceptor.class);
+        for (CommandInterceptor commandInterceptor : commandInterceptors) {
+            registerInterceptor(commandInterceptor);
+        }
     }
 
     private void registerInterceptor(CommandInterceptor commandInterceptor) {
