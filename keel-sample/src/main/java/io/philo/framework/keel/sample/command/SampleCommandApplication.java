@@ -9,7 +9,7 @@ import org.springframework.context.ConfigurableApplicationContext;
 public class SampleCommandApplication {
 
     public static void main(String[] args) {
-        ConfigurableApplicationContext applicationContext = SpringApplication.run(SampleCommandApplication.class, args);;
+        ConfigurableApplicationContext applicationContext = SpringApplication.run(SampleCommandApplication.class, args);
 
         CommandBus commandBus = applicationContext.getBean(CommandBus.class);
 

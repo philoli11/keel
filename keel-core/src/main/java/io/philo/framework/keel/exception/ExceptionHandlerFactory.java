@@ -11,11 +11,10 @@ import org.springframework.beans.factory.NoSuchBeanDefinitionException;
  */
 public class ExceptionHandlerFactory {
 
-    public static ExceptionHandler getExceptionHandler(){
+    public static ExceptionHandler getExceptionHandler() {
         try {
             return ApplicationContextHelper.getBean(ExceptionHandler.class);
-        }
-        catch (NoSuchBeanDefinitionException ex){
+        } catch (NoSuchBeanDefinitionException ex) {
             return DefaultExceptionHandler.singleton;
         }
     }

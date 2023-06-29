@@ -18,13 +18,11 @@ public @interface Extension {
     String cond();
 
     /**
-     *
      * @return 扩展点类型
      */
     ExtensionType type() default ExtensionType.EXCLUSIVE;
 
     /**
-     *
      * @return 扩展点顺序
      */
     int order() default Integer.MAX_VALUE;

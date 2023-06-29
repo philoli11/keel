@@ -12,11 +12,11 @@ public abstract class AbstractComponentExecutor {
     /**
      * Execute extension with Response
      *
-     * @param targetClz 扩展点接口类
-     * @param context 上下文
+     * @param targetClz   扩展点接口类
+     * @param context     上下文
      * @param exeFunction 方法逻辑
-     * @param <R> Response Type
-     * @param <T> Parameter Type
+     * @param <R>         Response Type
+     * @param <T>         Parameter Type
      * @return 执行结果
      */
     public <R, T> R execute(Class<T> targetClz, KeelContext context, Function<T, R> exeFunction) {
@@ -30,10 +30,10 @@ public abstract class AbstractComponentExecutor {
     /**
      * Execute extension without Response
      *
-     * @param targetClz 扩展点接口类
-     * @param context 上下文
+     * @param targetClz   扩展点接口类
+     * @param context     上下文
      * @param exeFunction 方法逻辑
-     * @param <T> Parameter Type
+     * @param <T>         Parameter Type
      */
     public <T> void executeVoid(Class<T> targetClz, KeelContext context, Consumer<T> exeFunction) {
         List<T> component = locateComponent(targetClz, context);

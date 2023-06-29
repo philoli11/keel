@@ -18,7 +18,6 @@ import org.springframework.context.annotation.Configuration;
 public class ExtensionAutoConfiguration {
 
 
-
     @Bean(initMethod = "init")
     @ConditionalOnMissingBean(Bootstrap.class)
     public Bootstrap bootstrap() {
